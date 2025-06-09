@@ -66,3 +66,22 @@ La clase Conexion_Base es el núcleo de acceso a la base de datos. Proporciona m
 🧠 Propósito
 Permitir la conexión y desconexión al sistema gestor de base de datos MySQL usando JDBC (Java Database Connectivity). Es utilizada como base para que otras clases de conexión accedan al mismo punto centralizado de configuración.
 
+# 🧱 Estructura de la Clase
+
+| 🧩 Atributo               | Descripción |
+|----------------------------|-------------|
+| bd           | Nombre de la base de datos a la que se conectará (proyecto_tap_14).|
+| url     | Dirección del servidor MySQL (localhost en el puerto 3306). |
+| user   |Usuario con permisos para acceder a la base de datos (root). |
+| password     | Contraseña del usuario (⚠️ sensible).
+| driver     | Driver JDBC de MySQL (com.mysql.cj.jdbc.Driver). |
+| cx     | Objeto de tipo Connection para manejar la conexión actual.|
+
+#🔧 Métodos Públicos
+
+| 🧩 Método               | Descripción |
+|----------------------------|-------------|
+| Conectar()           | 	Carga el driver JDBC, y establece una conexión con la base de datos.|
+| Desconectar()     | Cierra la conexión activa si está abierta. |
+
+---
