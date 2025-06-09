@@ -482,7 +482,9 @@ Este método es clave para validar al usuario. Dependiendo de la variable `Opcio
 
 ## 🛒 Sistema de Carrito de Compras - Mercad-ITO
 
-# Img
+## Vista del Jframe del carrito 
+![Image](https://github.com/user-attachments/assets/97e3f11c-78b7-45c4-9f22-354c9b408d19)
+![Image](https://github.com/user-attachments/assets/fbe4baa6-3195-4a53-a0d6-54a8cf73f9aa)
 
 ## 📋 Descripción
 Mercad-ITO es un sistema de punto de venta (POS) desarrollado en Java con interfaz gráfica Swing. Permite a los cajeros gestionar ventas de productos, administrar el inventario y generar tickets de compra con envío automático por correo electrónico.
@@ -622,7 +624,14 @@ Validaciones Implementadas
 ---
 
 # Sistema de venta 
+
+## Vista de punto de venta 
 Un sistema integral de gestión empresarial desarrollado en Java Swing que permite administrar clientes, proveedores, productos, ventas y personal de manera eficiente.
+
+![Image](https://github.com/user-attachments/assets/c779f92e-0b88-449e-abbb-4a7c5f8451cd)
+![Image](https://github.com/user-attachments/assets/4f332fe0-39ab-4835-a27c-052b21bbe8e1)
+
+
 ## 📋 Descripción
 SistemaPrueba es una aplicación de escritorio que centraliza la gestión de diferentes aspectos de un negocio, proporcionando una interfaz intuitiva para el manejo de datos empresariales con funcionalidades avanzadas como generación de PDFs y verificación por correo electrónico.
 
@@ -706,6 +715,9 @@ El sistema cuenta con una interfaz tabbed que organiza los módulos:
 ---
 
 # 🔐 Recuperar contraseña 
+
+## Vista de recuperacion de contraseña
+![Image](https://github.com/user-attachments/assets/961be140-3007-41ba-b91a-2b61b0d765a6)
 
 ## 📋 Descripción
 El sistema de Recuperación de Contraseña es una aplicación Java Swing que permite a los usuarios recuperar y cambiar sus contraseñas de forma segura mediante un proceso de verificación por correo electrónico.
@@ -822,6 +834,9 @@ El sistema de Recuperación de Contraseña es una aplicación Java Swing que per
 ---
 
 # 📋 Sistema de Registro de Personal
+
+## Vista de registro 
+![Image](https://github.com/user-attachments/assets/152a610d-c5a2-4bd4-a432-f4c839c08dca)
 ## 🎯 Descripción
 Sistema de registro de personal desarrollado en Java Swing que permite el registro seguro de nuevos empleados con validación de correo electrónico, generación automática de contraseñas y verificación por código.
 
@@ -905,7 +920,6 @@ La interfaz cuenta con un diseño intuitivo con:
 
 ---
 # 🔗Video
-- Video de Prueba del Sistema Mercad-ITO
 [https://youtu.be/dB0VDqqTKwc](https://youtu.be/OvW1wi_TP-g)
 ---
 # Autores
