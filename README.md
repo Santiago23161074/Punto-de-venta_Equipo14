@@ -567,7 +567,7 @@ Características:
 
   ### Tabla de Productos
 
-  | Columna | Tipo | Descripción |
+| Columna | Tipo | Descripción |
 |---------|------|-------------|
 | `Nombre` | String | Nombre del producto|
 | `Código` | Integer|Código único del producto|
