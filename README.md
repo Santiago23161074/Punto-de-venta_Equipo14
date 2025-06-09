@@ -1,7 +1,4 @@
 # Punto-de-venta_Equipo14
-Un punto de venta en el cual usamos una base de datos, implementado en el entorno de MySQL Workbench, y usando 100% el lenguaje de java, usado en Netbeans
-
-
 # 🛒 Sistema de Gestión de Ventas - Java Swing
 
 Este proyecto es una aplicación de escritorio desarrollada en Java usando la biblioteca **Swing**, orientada a la gestión de ventas y administración de productos, clientes, proveedores y personal. Ha sido diseñado para facilitar el control y operación de una pequeña empresa comercial.
@@ -65,7 +62,7 @@ Prueba_Proyecto/
 
 ### Prerrequisitos
 
-- Java JDK 8 o superior
+- Java JDK 23.0.2 o superior
 - Apache Ant (opcional, para compilar con `build.xml`)
 - IDE recomendado: NetBeans
 
@@ -79,40 +76,4 @@ Prueba_Proyecto/
 ```
 
 ---
-
-## 🖼️ Interfaz Gráfica (Vista esperada)
-
-Aunque no se incluyen capturas, la interfaz está construida con `Java Swing`, y contiene:
-
-- Formularios para login y registro.
-- Ventanas de administración de clientes, productos y ventas.
-- Tabla con productos seleccionados para simular compras (Carrito).
-- Ventana de recuperación de contraseña vía correo electrónico.
-
----
-
-## 🧩 Dependencias
-
-| Componente      | Uso                                |
-|----------------|-------------------------------------|
-| Java Swing      | Construcción de interfaces gráficas |
-| JavaMail (posible) | Envío de correos electrónicos     |
-| JDBC            | Conexión con base de datos          |
-
----
-
-## 👨‍💻 Autores
-
-- 📌 **Desarrollador Principal:** *[Tu nombre aquí]*  
-- 🛠️ Proyecto académico / prototipo funcional
-
----
-
-## 📜 Licencia
-
-Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente, dando crédito al autor original.
-
----
-
-¡Gracias por visitar este proyecto! 😊
 
