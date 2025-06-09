@@ -138,3 +138,44 @@ Evita duplicar nombres de otros clientes al actualizar datos:
 `SELECT COUNT(*) FROM clientes 
 WHERE Nombre = ? AND ApellidoPaterno = ? AND ApellidoMaterno = ?
 AND NOT (Nombre = ? AND ApellidoPaterno = ? AND ApellidoMaterno = ?)`
+
+---
+
+# 👥 Clase `Conexion_Personal.java`
+
+`Conexion_Personal` es una clase Java que gestiona operaciones CRUD sobre la tabla `personal` en una base de datos relacional, conectándose mediante JDBC. Está pensada como parte de un sistema de administración de personal en una aplicación más amplia (por ejemplo, un punto de venta o sistema empresarial)
+
+# 🧩 Dependencias
+- Conexion_Base – Clase auxiliar que proporciona una conexión a la base de datos.
+
+- JDBC (java.sql.*)
+
+- java.util.List, ArrayList
+
+- java.util.logging – Para el registro de errores SQL.
+
+# ⚙️ Funcionalidades
+📋 Consultas
+- CargosDisponibles(), Retorna una lista con los nombres de todos los cargos disponibles.
+
+- ObtenerPersonal(), Devuelve una lista con todos los empleados registrados y sus cargos.
+
+- ObtenerPersonalCargo(String cargoNombre),Devuelve una lista de empleados que pertenecen a un cargo específico.
+
+- BuscarCajero(String usuario),Retorna el nombre completo de un empleado basado en su correo.
+
+- BuscarCorreo(String usuario, String nombre, String cargo), Verifica si existe un empleado con ese nombre, correo y cargo.
+
+# ➕ Inserción
+-  InsertarPersonal(String nombre, String apPaterno, String apMaterno, String contraseña, String correo, String cargo), Inserta un nuevo empleado en la base de datos si no existe duplicado.
+
+# 🗑️ Eliminación
+- EliminarPersonal(String correo, String cargo),Elimina un empleado basado en su correo y cargo.
+
+# ✏️ Modificación
+- ModificarPersonal(...), Actualiza los datos de un empleado, con validación de duplicados.
+
+- ModificarContraseña(String correo, String nuevaContraseña, String cargo), Actualiza la contraseña de un empleado si el correo y cargo coinciden.
+
+# 🔐 Autenticación
+- VerificarCredenciales(String correo, String contraseña), Verifica si las credenciales de inicio de sesión son válidas.
