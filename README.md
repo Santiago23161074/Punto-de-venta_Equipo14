@@ -836,7 +836,7 @@ El sistema de Recuperación de Contraseña es una aplicación Java Swing que per
 # 📋 Sistema de Registro de Personal
 
 ## Vista de registro 
-![Image](https://github.com/user-attachments/assets/152a610d-c5a2-4bd4-a432-f4c839c08dca)
+![Image](https://github.com/user-attachments/assets/cf5fe1ab-7e48-42b9-b8d3-92e0aa035d3b)
 ## 🎯 Descripción
 Sistema de registro de personal desarrollado en Java Swing que permite el registro seguro de nuevos empleados con validación de correo electrónico, generación automática de contraseñas y verificación por código.
 
