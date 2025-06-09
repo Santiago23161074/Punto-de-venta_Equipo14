@@ -179,3 +179,51 @@ AND NOT (Nombre = ? AND ApellidoPaterno = ? AND ApellidoMaterno = ?)`
 
 # 🔐 Autenticación
 - VerificarCredenciales(String correo, String contraseña), Verifica si las credenciales de inicio de sesión son válidas.
+--- 
+# 📦 Clase Conexion_Producto
+La clase Conexion_Producto gestiona todas las operaciones relacionadas con productos dentro de una base de datos, incluyendo inserciones, eliminaciones, modificaciones, ventas, cancelaciones y consultas. Forma parte del paquete Conexion y utiliza una instancia de Conexion_Base para conectarse a la base de datos.
+
+# 📚 Métodos Principales
+✅ boolean InsertarProducto(...)
+Inserta un nuevo producto en la base de datos si no existe previamente con el mismo nombre, código y proveedor.
+
+- Requiere que el proveedor exista en la tabla proveedor.
+
+- Requiere que la categoría exista en la tabla categoria.
+
+- ❌ boolean EliminarProducto(String Nombre, int Codigo)
+Elimina un producto identificado por su nombre y código.
+
+- ✏️ boolean ModificarProducto(...)
+Actualiza los datos de un producto existente, identificándolo por nombre y código originales. Verifica que no haya duplicados por nombre con otro código.
+
+- 🔍 List<String[]> ListarProductosTipo(String Tipo)
+Retorna una lista de productos disponibles (cantidad > 0) filtrados por tipo de categoría.
+
+- 📋 List<String[]> ListarProductos()
+Retorna una lista de todos los productos con cantidad mayor que cero, incluyendo nombre de categoría y proveedor.
+
+- 📂 List<String> CategoriasDisponibles()
+Obtiene todas las categorías disponibles desde la base de datos.
+
+- 🛒 boolean VentaProducto(int codigoProducto, int cantidadARestar)
+Resta una cantidad específica a un producto, siempre que haya stock suficiente.
+
+- ↩️ boolean CancelarCompra(int codigoProducto, int cantidadAReponer)
+Restaura la cantidad de un producto después de cancelar una compra.
+
+# 🔗 Requisitos de Base de Datos
+Esta clase espera que existan las siguientes tablas:
+
+- producto (nombre, codigo, categoria, descripcion, proveedor, cantidad, precio)
+
+- categoria (id, categoria)
+
+- proveedor (id, nombre, apellido_paterno, apellido_materno)
+
+# 🧱 Dependencias
+- Conexion_Base — Clase utilizada para establecer conexión con la base de datos.
+
+- java.sql.* — Para operaciones con la base de datos (JDBC).
+
+- java.util.* — Para listas dinámicas.
