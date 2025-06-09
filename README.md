@@ -425,3 +425,55 @@ También valida correos comunes como:
 Ideal para CAPTCHAs o códigos de validación.
 
 ---
+
+# Paquete de vistas
+
+# 🧾 Interfaz de Login - Mercad-ITO
+
+Este proyecto forma parte del sistema de ventas para **Mercad-ITO**, una aplicación de escritorio desarrollada en Java con Swing. Proporciona una interfaz gráfica de inicio de sesión que permite acceder como **Administrador** o **Cajero**, con opciones adicionales como recuperación de contraseña y registro de usuarios.
+
+---
+
+## ✨ Características principales
+
+- Interfaz amigable con FlatLaf (FlatLightLaf) ✨
+- Acceso diferenciado según rol: 👨‍💼 Administrador / 👷‍♂️ Cajero
+- Validación de credenciales desde la base de datos
+- Iconos visuales de verificación o error ✅❌
+- Recuperación de contraseña 🔐
+- Registro de nuevos usuarios 📝
+
+---
+
+## 🧠 Funcionalidad del código
+
+El comportamiento principal se basa en los siguientes puntos:
+
+| Componente       | Descripción                                                                            |
+|------------------|----------------------------------------------------------------------------------------|
+| `btnAceptar`     | Verifica credenciales. Si son válidas, redirige al usuario según el tipo de cuenta.   |
+| `btnCajeros`     | Selecciona el modo **Cajero**, activando iconos relacionados.                         |
+| `btnAdministrador` | Selecciona el modo **Administrador**, activando iconos relacionados.                 |
+| `btnRecuperarC`  | Abre la ventana de recuperación de contraseña.                                        |
+| `btnRegistrarse` | Abre la ventana de registro de nuevos usuarios.                                       |
+| `iconSegContra`  | Alterna la visibilidad de la contraseña al hacer clic. 👁️                              |
+| `formWindowClosing` | Muestra una ventana de confirmación al cerrar la aplicación.                      |
+
+---
+
+## 🔍 Métodos importantes
+
+### `btnAceptarActionPerformed`
+Este método es clave para validar al usuario. Dependiendo de la variable `Opcion`, verifica si es cajero o administrador y redirige:
+
+## 📦 Dependencias
+- FlatLaf: Mejora visual moderna para interfaces Swing.
+
+- Conexion_Personal: Clase que permite verificar credenciales contra la base de datos.
+
+- Conexion_Producto: Gestión de productos (inicializada, pero no usada aquí).
+
+- Recursos gráficos (/Img/*.png) para íconos visuales.
+
+
+
