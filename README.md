@@ -227,3 +227,92 @@ Esta clase espera que existan las siguientes tablas:
 - java.sql.* — Para operaciones con la base de datos (JDBC).
 
 - java.util.* — Para listas dinámicas.
+
+---
+
+## 📦 Clase Conexion_Proveedor
+La clase `Conexion_Proveedor` pertenece al paquete Conexion y se encarga de gestionar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre la tabla proveedor en una base de datos relacional. Utiliza la clase `Conexion_Base` para establecer la conexión con la base de datos.
+
+## 🧩 Dependencias
+
+| Librería | Uso |
+|--------|-------------|
+| `java.sql.Connection` | Conexión con la base de datos. |
+| `java.sql.PreparedStatement` | Preparar sentencias SQL seguras |
+| `java.sql.ResultSet` | 	Recibir resultados de consultas SQL|
+| `java.util.logging.Logger` | Manejo de errores SQL |
+| `java.util.ArrayList` | Registro de errores y eventos |
+| `java.util.List` | Estructura para almacenar resultados |
+
+#  🧾 Explicación 
+La clase 🔌 Conexion_Proveedor se encarga de realizar operaciones sobre la tabla proveedor de una base de datos, como parte del módulo de conexión en una aplicación Java. Utiliza JDBC para interactuar con la base de datos, y depende de una clase auxiliar llamada Conexion_Base que gestiona la conexión.
+
+📌 Funcionalidades principales:
+- Insertar proveedores evitando duplicados por nombre completo.
+
+- Eliminar proveedores según su nombre, apellido paterno y materno.
+
+- Modificar proveedores validando que el nuevo nombre no exista ya.
+
+- Listar nombres completos de proveedores.
+
+- Listar todos los datos de los proveedores en forma de lista.
+
+Es útil como una capa intermedia entre la base de datos y la interfaz de usuario, encapsulando la lógica de acceso a los datos de proveedores.
+
+---
+
+# 🧾 Clase `Conexion_Ventas` - Módulo de Gestión de Ventas
+
+Este archivo Java forma parte del sistema de punto de venta y se encarga de manejar la lógica relacionada con **ventas**, incluyendo registros, cancelaciones, generación de reportes y creación de archivos PDF.
+
+📌 Descripción general
+La clase Conexion_Ventas se comunica con la base de datos mediante JDBC para realizar operaciones sobre las tablas ventas, detalleventa, producto, clientes y personal.
+
+📂 Dependencias
+- `Conexion_Base`: Encargada de establecer la conexión a la base de datos.
+
+- `Correo_Creado`: Utilizada para la generación de PDF con los detalles de venta.
+
+# ⚙️ Métodos principales
+
+| Método | Descripción|
+|--------|-------------|
+| `boolean EliminarVenta(int)` |Cancela una venta: elimina registros y repone stock. |
+| `boolean registrarVenta(...)` |Registra una venta y sus detalles en la base de datos.|
+| `List<String[]> obtenerReporteVentas()` | Obtiene un reporte de todas las ventas realizadas.|
+| `void generarPDFVenta(int)` | Genera un archivo PDF con los datos completos de una venta específica.|
+
+📄 Detalles de cada método
+🔻 EliminarVenta(int idVenta)
+- Elimina una venta completa y repone el stock de productos involucrados.
+
+
+- Usa transacciones (commit/rollback) para garantizar la integridad de los datos.
+
+🧾 registrarVenta(String correoCliente, String usuarioCajero, List<String[]> ticket)
+
+- Inserta una venta en la tabla ventas y sus productos en detalleventa.
+
+
+- Calcula el total de la venta automáticamente.
+
+
+- Valida que cada producto exista antes de registrar la venta.
+
+📊 obtenerReporteVentas()
+
+- Realiza un LEFT JOIN entre ventas, clientes y personal.
+
+
+- Retorna una lista con: ID, nombre del cliente, nombre del cajero, total y fecha.
+
+📄 generarPDFVenta(int idVenta)
+
+- Consulta todos los detalles de una venta (productos, cantidades, precios).
+
+
+- Extrae información del cliente y cajero asociado.
+
+
+- Llama a Correo_Creado para generar un PDF de la venta.
