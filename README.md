@@ -58,22 +58,11 @@ Prueba_Proyecto/
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+## Paquete de coneccciones
 
-### Prerrequisitos
+#🔌Clase Conexion_Base.java
+La clase Conexion_Base es el núcleo de acceso a la base de datos. Proporciona métodos esenciales para establecer y cerrar la conexión con un servidor MySQL. Esta clase es fundamental para que las demás clases que interactúan con la base de datos puedan funcionar correctamente.
 
-- Java JDK 23.0.2 o superior
-- Apache Ant (opcional, para compilar con `build.xml`)
-- IDE recomendado: NetBeans
-
-### Pasos
-
-```bash
-1. Clona o descomprime este repositorio.
-2. Abre NetBeans y selecciona "Abrir Proyecto".
-3. Ejecuta el archivo `SistemaPrueba.java` o compila con Ant.
-4. Asegúrate de configurar correctamente la conexión a la base de datos.
-```
-
----
+#🧠 Propósito
+Permitir la conexión y desconexión al sistema gestor de base de datos MySQL usando JDBC (Java Database Connectivity). Es utilizada como base para que otras clases de conexión accedan al mismo punto centralizado de configuración.
 
