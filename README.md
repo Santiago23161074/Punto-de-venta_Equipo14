@@ -77,7 +77,7 @@ Permitir la conexión y desconexión al sistema gestor de base de datos MySQL us
 | driver     | Driver JDBC de MySQL (com.mysql.cj.jdbc.Driver). |
 | cx     | Objeto de tipo Connection para manejar la conexión actual.|
 
-#🔧 Métodos Públicos
+# 🔧 Métodos Públicos
 
 | 🧩 Método               | Descripción |
 |----------------------------|-------------|
@@ -85,3 +85,56 @@ Permitir la conexión y desconexión al sistema gestor de base de datos MySQL us
 | Desconectar()     | Cierra la conexión activa si está abierta. |
 
 ---
+
+# 👥 Clase `Conexion_Clientes.java`
+
+La clase `Conexion_Clientes` se encarga de **gestionar operaciones CRUD (Crear, Leer, Actualizar y Eliminar)** sobre la tabla `clientes` de la base de datos. Utiliza la clase `Conexion_Base` para establecer la conexión y ejecuta consultas SQL mediante `PreparedStatement`.
+
+
+---
+
+## 🧠 Propósito
+
+Permitir la interacción directa entre la aplicación Java y la tabla `clientes` de una base de datos MySQL. Ofrece métodos para:
+
+- 📋 Listar clientes
+- ➕ Insertar nuevos registros
+- 🗑️ Eliminar registros
+- 📝 Modificar datos existentes
+- 📧 Consultar correos
+- 🔍 Obtener datos por correo
+
+---
+
+## 🧱 Atributos
+
+| Atributo | Tipo | Descripción |
+|---------|------|-------------|
+| `cx` | `Connection` | Objeto que mantiene la conexión activa. |
+| `CB` | `Conexion_Base` | Instancia utilizada para conectarse a la base de datos. |
+
+---
+
+## 🛠️ Métodos Públicos
+
+| Método | Descripción |
+|--------|-------------|
+| `ListarClientes()` | Devuelve una lista de arreglos de strings con datos completos de los clientes. |
+| `ListarClientesCorreo()` | Retorna una lista de correos de los clientes. |
+| `InsertarCliente(...)` | Inserta un nuevo cliente en la base de datos (verifica duplicados por nombre completo). |
+| `EliminarCliente(...)` | Elimina un cliente con nombre, apellido paterno y materno específicos. |
+| `ModificarCliente(...)` | Modifica los datos de un cliente validando duplicados. |
+| `DatosCliente(correo)` | Devuelve un arreglo con los datos de un cliente a partir de su correo. |
+
+---
+
+# ✅ Verificación antes de insertar
+Evita duplicados mediante:
+`SELECT COUNT(*) FROM clientes WHERE Nombre = ? AND ApellidoPaterno = ? AND ApellidoMaterno = ?`
+
+# ✅ Verificación antes de modificar
+Evita duplicar nombres de otros clientes al actualizar datos:
+
+`SELECT COUNT(*) FROM clientes 
+WHERE Nombre = ? AND ApellidoPaterno = ? AND ApellidoMaterno = ?
+AND NOT (Nombre = ? AND ApellidoPaterno = ? AND ApellidoMaterno = ?)`
