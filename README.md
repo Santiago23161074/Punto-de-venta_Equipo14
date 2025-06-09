@@ -284,13 +284,16 @@ La clase Conexion_Ventas se comunica con la base de datos mediante JDBC para rea
 | `void generarPDFVenta(int)` | Genera un archivo PDF con los datos completos de una venta específica.|
 
 📄 Detalles de cada método
+
 🔻 EliminarVenta(int idVenta)
 - Elimina una venta completa y repone el stock de productos involucrados.
 
 
 - Usa transacciones (commit/rollback) para garantizar la integridad de los datos.
 
-🧾 registrarVenta(String correoCliente, String usuarioCajero, List<String[]> ticket)
+🧾 registrarVenta
+
+(String correoCliente, String usuarioCajero, List<String[]> ticket)
 
 - Inserta una venta en la tabla ventas y sus productos en detalleventa.
 
@@ -307,7 +310,9 @@ La clase Conexion_Ventas se comunica con la base de datos mediante JDBC para rea
 
 - Retorna una lista con: ID, nombre del cliente, nombre del cajero, total y fecha.
 
-📄 generarPDFVenta(int idVenta)
+📄 generarPDFVenta
+
+(int idVenta)
 
 - Consulta todos los detalles de una venta (productos, cantidades, precios).
 
@@ -316,3 +321,107 @@ La clase Conexion_Ventas se comunica con la base de datos mediante JDBC para rea
 
 
 - Llama a Correo_Creado para generar un PDF de la venta.
+
+---
+
+# Clase "Correro_Creado"
+
+Esta clase en Java permite **generar archivos PDF personalizados** y **enviarlos por correo electrónico** utilizando la librería `iText` para PDFs y `Jakarta Mail` para el envío de correos.
+
+---
+
+## ✨ Funcionalidades
+
+- 📄 Generación de PDFs:
+  - Comprobante de venta (`CrearPDFVenta`)
+  - Código de recuperación de cuenta (`crearPDFRecuperacion`)
+  - Código de verificación (`crearPDFVerificacion`)
+- ✉️ Envío de correos con PDF adjunto (`EnviarCorreo`)
+
+---
+
+## 📦 Dependencias
+
+- [`jakarta.mail`](https://eclipse-ee4j.github.io/mail/)
+- [`itextpdf`](https://itextpdf.com)
+
+---
+
+## 🧱 Estructura del código
+
+### Variables importantes
+
+java
+private final String CorreoRemitente = "mercad.ito.tap14@gmail.com";
+private final String ContraseñaRemitente = "dior zlmu gcch kxrh";
+private final String NombreEmpresa = "Mercad - ITO";
+private final String rutaLOGO = "ruta/a/tu/logo.png";
+private String rutaPDF;
+
+## Métodos principales
+- 📁 String generarRutaPDF(String tipo, String identificador)
+Genera una ruta con nombre automático (tipo + fecha) para el PDF.
+
+
+- 🧾 void CrearPDFVenta(List<String[]> lista, String nombreUsuario, ...)
+Genera un comprobante de venta con tabla de productos y totales.
+
+
+- 🔐 void crearPDFRecuperacion(String nombreCompleto, String correoUsuario, ...)
+Genera un documento PDF con código de recuperación y detalles del usuario.
+
+
+- ✅ void crearPDFVerificacion(String CodigoVerificacion, String nombrePersona, ...)
+Genera un PDF con un código de verificación centrado y formateado.
+
+
+- 📤 void EnviarCorreo(String CorreoDestinatario, String Cuerpo)
+Envía por correo el PDF previamente generado como archivo adjunto.
+
+---
+
+# Clase velidacion
+
+## ✨ Funcionalidades
+
+### 🔤 1. `soloLetras(JTextField textField)`
+✅ Permite ingresar únicamente letras (mayúsculas, minúsculas), vocales acentuadas y la letra ñ en un `JTextField`.
+
+---
+
+### 🔢 2. `soloNumeros(JTextField textField)`
+✅ Restringe el campo para que solo se puedan ingresar números enteros.
+
+---
+
+### 💲 3. `Precio(JTextField textField)`
+✅ Permite ingresar números decimales válidos, incluyendo el punto (`.`) como separador decimal. Solo se permite un punto por número.
+
+---
+
+### 🔡 4. `soloLetrasYNumeros(JTextField textField)`
+✅ Permite letras (con y sin acentos), números y espacios. Es útil para nombres de usuario o campos mixtos.
+
+---
+
+### 📧 5. `VerificarCorreo(String Email) : boolean`
+✅ Verifica si una dirección de correo electrónico es válida.  
+Admite dominios:
+- `.com`
+- `.mx`
+- `.itoaxaca`  
+También valida correos comunes como:
+- `@hotmail`
+- `@gmail`
+- `@outlook`
+
+---
+
+### 🧩 6. `GenerarCodigos() : String`
+🔐 Genera un código aleatorio de 8 caracteres que puede incluir:
+- Letras (excluye I y O para evitar confusión)
+- Números
+- Caracteres especiales  
+Ideal para CAPTCHAs o códigos de validación.
+
+---
