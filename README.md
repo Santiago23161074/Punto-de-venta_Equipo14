@@ -380,7 +380,7 @@ Envía por correo el PDF previamente generado como archivo adjunto.
 
 ---
 
-# Clase velidacion
+# Clase validación
 
 ## ✨ Funcionalidades
 
@@ -428,7 +428,7 @@ Ideal para CAPTCHAs o códigos de validación.
 
 # Paquete de vistas
 
-# 🧾 Interfaz de Login - Mercad-ITO
+## 🧾 Interfaz de Login - Mercad-ITO
 
 Este proyecto forma parte del sistema de ventas para **Mercad-ITO**, una aplicación de escritorio desarrollada en Java con Swing. Proporciona una interfaz gráfica de inicio de sesión que permite acceder como **Administrador** o **Cajero**, con opciones adicionales como recuperación de contraseña y registro de usuarios.
 
@@ -475,5 +475,143 @@ Este método es clave para validar al usuario. Dependiendo de la variable `Opcio
 
 - Recursos gráficos (/Img/*.png) para íconos visuales.
 
+---
+
+## 🛒 Sistema de Carrito de Compras - Mercad-ITO
+
+# Img
+
+## 📋 Descripción
+Mercad-ITO es un sistema de punto de venta (POS) desarrollado en Java con interfaz gráfica Swing. Permite a los cajeros gestionar ventas de productos, administrar el inventario y generar tickets de compra con envío automático por correo electrónico.
+
+## ✨ Características Principales
+
+- 🛍️ Gestión de Productos: Visualización y filtrado de productos por categorías
+- 🧾 Sistema de Tickets: Generación automática de tickets de venta
+- 📧 Envío de Correos: Envío automático de tickets por email
+- 👥 Gestión de Clientes: Registro y selección de clientes
+- 📊 Control de Inventario: Actualización automática del stock
+- 💰 Cálculo de Totales: Suma automática de productos y totales
+
+## 🏗️ Arquitectura del Sistema
+
+| Componente | Descripción | Responsabilidad |
+|---------|------|-------------|
+| `Carrito` | Clase principal | Interfaz gráfica y lógica de negocio|
+| `Conexion_Producto` | Gestión de productos| CRUD de productos y categorías |
+| `Conexion_Clientes` | Gestión de clientes| Manejo de datos de clientes |
+| `Conexion_Personal` | Gestión de empleados |Datos de cajeros y personal |
+| `Conexion_Ventas` |Registro de ventas| Persistencia de transacciones |
+| `Correo_Creado` | Sistema de correos| Generación de PDFs y envío de emails|
+| `Validacion` |Validaciones |Validación de entrada de datos. |
+
+## 🖥️ Interfaz de Usuario
+Pestañas Principales
+### 🔍 Pestaña "Elegir"
+
+- Tabla de productos disponibles
+- Filtro por categorías
+- Campo de cantidad
+- Botón para agregar productos al carrito
+
+## 🛒 Pestaña "Venta"
+
+- Tabla del carrito de compras
+- Selección de cliente
+- Total a pagar
+- Botones de acción (Pagar, Cancelar, Eliminar)
+
+### 📦 Gestión de Productos
+
+`// Llenar tabla de productos
+public void LlenarTablaProductos(List<String[]> lista)`
+
+`// Filtrar por categoría
+public void btnCategoriaActionPerformed(ActionEvent evt)`
+
+ Características:
+
+- ✅ Visualización de productos con detalles completos
+- ✅ Filtrado dinámico por categorías
+- ✅ Validación de stock disponible
+- ✅ Actualización automática del inventario
+
+### 🛍️ Carrito de Compras
+
+`// Agregar producto al carrito
+public void btnConfirmarProductoActionPerformed(ActionEvent evt)`
+
+`// Agrupar productos duplicados
+public void LlenarTablaVenta(List<String[]> lista)`
+
+ Características:
+
+- ✅ Agrupación automática de productos duplicados
+- ✅ Cálculo automático de totales
+- ✅ Validación de cantidades
+- ✅ Eliminación individual de productos
+
+### 💳 Sistema de Pagos
+`// Procesar pago
+public void btnPagarActionPerformed(ActionEvent evt)`
+
+`// Cancelar venta completa
+public void CancelarVenta(List<String[]> ticket)`
+
+Características:
+
+- ✅ Generación automática de PDF
+- ✅ Envío de ticket por correo electrónico
+- ✅ Registro de venta en base de datos
+- ✅ Restauración de stock en cancelaciones
+
+  ### Tabla de Productos
+
+  | Columna | Tipo | Descripción |
+|---------|------|-------------|
+| `Nombre` | String | Nombre del producto|
+| `Código` | Integer|Código único del producto|
+| `Categoría` | String| Categoría del producto |
+| `Descripción` | String |Descripción detallada|
+| `Proveedor` |String| Proveedor del producto|
+| `Cantidad` |Integer|Stock disponible|
+| `Precio` |Double| Precio unitario|
+
+# 💻 Uso del Sistema
+## Para Cajeros
+
+### Iniciar Sesión 🔐
+
+- Ingresar credenciales de cajero
 
 
+### Seleccionar Productos 🛍️
+
+- Navegar a la pestaña "Elegir"
+- Filtrar por categoría (opcional)
+- Seleccionar producto y cantidad
+- Hacer clic en "Agregar producto"
+
+
+### Gestionar Carrito 🛒
+
+- Ir a la pestaña "Venta"
+- Revisar productos agregados
+- Eliminar productos si es necesario
+
+
+### Procesar Pago 💳
+
+- Seleccionar cliente
+- Verificar total
+- Hacer clic en "Pagar"
+
+
+
+## 🔒 Validaciones y Seguridad
+Validaciones Implementadas
+
+- ✅ Cantidades: Solo números positivos
+- ✅ Stock: Verificación de disponibilidad
+- ✅ Campos obligatorios: Validación de datos requeridos
+- ✅ Selección de productos: Validación de selección en tablas
