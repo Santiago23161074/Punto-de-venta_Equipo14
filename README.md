@@ -905,6 +905,7 @@ La interfaz cuenta con un diseño intuitivo con:
 
 ---
 # 🔗Video
+- Video de Prueba del Sistema Mercad-ITO
 [https://youtu.be/dB0VDqqTKwc](https://youtu.be/OvW1wi_TP-g)
 ---
 # Autores
