@@ -430,6 +430,9 @@ Ideal para CAPTCHAs o códigos de validación.
 
 ## 🧾 Interfaz de Login - Mercad-ITO
 
+## Vista del login 
+![Image](https://github.com/user-attachments/assets/ce9c6a69-31fd-4ccb-84d9-a3329b1234ef)
+
 Este proyecto forma parte del sistema de ventas para **Mercad-ITO**, una aplicación de escritorio desarrollada en Java con Swing. Proporciona una interfaz gráfica de inicio de sesión que permite acceder como **Administrador** o **Cajero**, con opciones adicionales como recuperación de contraseña y registro de usuarios.
 
 ---
