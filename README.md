@@ -58,7 +58,7 @@ Prueba_Proyecto/
 
 ---
 
-# Paquete de coneccciones
+# Paquete de concecciones
 
 ## 🔌Clase Conexion_Base.java
 La clase Conexion_Base es el núcleo de acceso a la base de datos. Proporciona métodos esenciales para establecer y cerrar la conexión con un servidor MySQL. Esta clase es fundamental para que las demás clases que interactúan con la base de datos puedan funcionar correctamente.
