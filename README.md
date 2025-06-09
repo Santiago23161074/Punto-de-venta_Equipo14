@@ -58,11 +58,11 @@ Prueba_Proyecto/
 
 ---
 
-## Paquete de coneccciones
+# Paquete de coneccciones
 
-#🔌Clase Conexion_Base.java
+## 🔌Clase Conexion_Base.java
 La clase Conexion_Base es el núcleo de acceso a la base de datos. Proporciona métodos esenciales para establecer y cerrar la conexión con un servidor MySQL. Esta clase es fundamental para que las demás clases que interactúan con la base de datos puedan funcionar correctamente.
 
-#🧠 Propósito
+🧠 Propósito
 Permitir la conexión y desconexión al sistema gestor de base de datos MySQL usando JDBC (Java Database Connectivity). Es utilizada como base para que otras clases de conexión accedan al mismo punto centralizado de configuración.
 
