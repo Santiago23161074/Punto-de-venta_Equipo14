@@ -615,3 +615,203 @@ Validaciones Implementadas
 - ✅ Stock: Verificación de disponibilidad
 - ✅ Campos obligatorios: Validación de datos requeridos
 - ✅ Selección de productos: Validación de selección en tablas
+
+---
+
+# Sistema de venta 
+Un sistema integral de gestión empresarial desarrollado en Java Swing que permite administrar clientes, proveedores, productos, ventas y personal de manera eficiente.
+## 📋 Descripción
+SistemaPrueba es una aplicación de escritorio que centraliza la gestión de diferentes aspectos de un negocio, proporcionando una interfaz intuitiva para el manejo de datos empresariales con funcionalidades avanzadas como generación de PDFs y verificación por correo electrónico.
+
+## ✨ Características Principales
+
+- 👥 Gestión de Clientes: Registro, modificación y eliminación de clientes
+- 🏭 Gestión de Proveedores: Administración completa de proveedores
+- 📦 Gestión de Productos: Control de inventario y categorización
+- 💰 Gestión de Ventas: Registro y seguimiento de transacciones
+- 👨‍💼 Gestión de Personal: Administración de empleados por cargo
+- 📧 Verificación de Correo: Sistema de validación mediante códigos
+- 📄 Generación de PDFs: Reportes automáticos de ventas
+- 🔍 Filtros Avanzados: Búsqueda por categorías y cargos
+
+## 🗂️ Módulos del Sistema
+  | Módulo | Descripción | Funcionalidades |
+|---------|------|-------------|
+| 👤 Clientes| Gestión de base de clientes |➕ Agregar ✏️ Editar 🗑️ Eliminar 📋 Listaro|
+| 🏭 Proveedores| Administración de proveedores|➕ Agregar ✏️ Editar 🗑️ Eliminar 📋 Listar|
+| 📦 Productos | Registro de transacciones|📋 Visualizar 🗑️ Eliminar 📄 Generar PDF|
+| Personal| Gestión de empleados |➕ Agregar ✏️ Editar 🗑️ Eliminar 🔍 Filtrar por cargo|
+
+## 🛠️ Tecnologías Utilizadas
+
+- Java Swing: Interfaz gráfica de usuario
+- MySQL: Base de datos relacional
+- JavaMail API: Envío de correos electrónicos
+- iText/PDFBox: Generación de documentos PDF
+- MVC Pattern: Arquitectura del software
+
+## 🚀 Funcionalidades Destacadas
+### 📧 Sistema de Verificación por Correo
+
+- Generación automática de códigos de verificación
+- Envío de correos electrónicos con PDFs adjuntos
+- Validación en tiempo real de direcciones de correo
+
+## 📊 Gestión de Datos
+
+- Validación de Entrada: Solo números para teléfonos, solo letras para nombres
+- Filtros Dinámicos: Búsqueda por categorías de productos y cargos de personal
+- Confirmaciones: Diálogos de confirmación para operaciones críticas
+
+## 📄 Generación de Reportes
+
+- PDFs automáticos de ventas
+- Documentos de verificación personalizados
+- Apertura automática de archivos generados
+
+## 🏗️ Arquitectura del Sistema
+```
+SistemaPrueba/
+├── 🖼️ GUI (Swing Components)
+├── 🔗 Conexiones a BD
+│   ├── Conexion_Clientes
+│   ├── Conexion_Proveedor
+│   ├── Conexion_Producto
+│   ├── Conexion_Ventas
+│   └── Conexion_Personal
+├── ✅ Validaciones
+├── 📧 Correo_Creado
+└── 📋 Modelos de Tabla
+```
+## 📱 Interfaz de Usuario
+El sistema cuenta con una interfaz tabbed que organiza los módulos:
+
+- Tab 0: 👤 Gestión de Clientes
+- Tab 1: 🏭 Gestión de Proveedores
+- Tab 2: 📦 Gestión de Productos
+- Tab 3: 💰 Gestión de Ventas
+- Tab 4: 👨‍💼 Gestión de Personal
+- Tab 5: 🏠 Panel Principal (por defecto)
+
+## 🔐 Características de Seguridad
+
+- ✅ Validación de formatos de correo electrónico
+- 🔒 Confirmaciones para operaciones de eliminación
+- 📧 Verificación de identidad mediante códigos por correo
+- 🛡️ Validación de entrada de datos
+
+---
+
+# 🔐 Recuperar contraseña 
+
+## 📋 Descripción
+El sistema de Recuperación de Contraseña es una aplicación Java Swing que permite a los usuarios recuperar y cambiar sus contraseñas de forma segura mediante un proceso de verificación por correo electrónico.
+
+## ✨ Características Principales
+
+- 🔒 Recuperación segura de contraseñas
+- 📧 Verificación por correo electrónico
+- 🎯 Validación de datos en tiempo real
+- 🔑 Generación automática de códigos de verificación
+- 👁️ Visualización opcional de contraseñas
+- 📄 Generación de PDFs para documentación
+
+## 🏗️ Arquitectura del Sistema
+  | Componente | Descripción | Responsabilidad |
+|---------|------|-------------|
+| Recuperar_Contraseña| Clase principal de la ventana |Gestión de la interfaz y lógica principal|
+| Correo_Creado| Servicio de correo|Envío de emails y generación de PDFs|
+| Validacion | Validador de datos|Validación de entrada y generación de códigos|
+| Conexion_Personal| Acceso a datos |Operaciones de base de datos|
+
+## 🚀 Flujo de Funcionamiento
+  | Paso | Acción | Descripción |
+|---------|------|-------------|
+| 1| Ingreso de Datos |Usuario ingresa correo, nombre y cargo|
+| 2| Validación|Sistema valida formato de correo y existencia del usuario|
+| 3 | Envío de Código|Se genera y envía código de verificación por email|
+| 4| Verificación |Usuario ingresa código recibido|
+| 5| Nueva Contraseña |Usuario establece nueva contraseña|
+| 6| Confirmación |Sistema actualiza contraseña en base de datos|
+
+## 🛠️ Métodos Principales
+  | Método | Propósito | Parámetros |
+|---------|------|-------------|
+| RellenarCargos()| 📋 Llena el ComboBox con cargos disponibles |Ninguno|
+|EsconderTodo()| 👁️‍🗨️ Oculta elementos de la interfaz|Ninguno|
+
+## Métodos de Eventos
+| Método       | Evento/Acción                                                                            |
+|------------------|----------------------------------------------------------------------------------------|
+| `btnECRCActionPerformed()`     | 📧 Enviar Código|
+| `txtCodigoRCActionPerformed()`     | 🔢 Verificar Código  |
+| `btnAceptarActionPerformed()` | ✅ Aceptar Cambio |
+| `btnSalirActionPerformed()`  | 🚪 Salir|
+| `iconSegContraMousePressed/Released()` | 👁️ Mostrar Contraseña|
+| `iconSegContra1MousePressed/Released()`  | 👁️ Mostrar Confirmación|
+
+## 🔧 Validaciones Implementadas
+### 📧 Validación de Correo
+
+- ✅ Formato válido de email
+- ✅ Existencia en base de datos
+- ✅ Correspondencia con nombre y cargo
+
+## 🔐 Validación de Contraseñas
+
+- ✅ Coincidencia entre contraseña y confirmación
+- ✅ Campos no vacíos
+
+## 🔢 Validación de Código
+
+- ✅ Comparación exacta con código generado
+- ✅ Formato numérico
+
+## 🎨 Elementos de la Interfaz
+  | Campo | Tipo | Descripción |
+|---------|------|-------------|
+| txtCorreoRC| TextFields |📧 Correo electrónico|
+| txtNombreRC| TextField|👤 Nombre del usuario|
+| cbxCargo| ComboBox|💼 Cargo del empleado|
+| txtCodigoRC| TextField|🔢 Código de verificación|
+| passContraRC| PasswordField |🔐 Nueva contraseña|
+|passContraConfirmar| PasswordField |✅ Confirmación de contraseña|
+
+## 🚨 Manejo de Errores
+  | Error | Mensaje | Acción |
+|---------|------|-------------|
+| 📧 Correo inválido| "El correo no tiene el formato correcto" Mostrar iconCRC4|
+| 👤 Usuario no encontrado| "Personal no encontrado"|Mostrar en txtResultado|
+| 🔢 Código incorrecto| Visual (iconos de error)|Mostrar iconCRC1,2,3|
+| 🔐 Contraseñas diferentes| "Las contraseñas no coinciden"|Mostrar diálogo y iconos|
+| 💾 Error de actualización| "Error al modificar la contraseña" |Mostrar diálogo|
+
+## 📄 Funcionalidades Adicionales
+### 📧 Sistema de Correo
+
+- Generación de PDF: Documento con código de recuperación
+- Envío automático: Correo con código de verificación
+- Manejo de excepciones: MessagingException
+
+### 🔐 Seguridad
+
+- Códigos únicos: Generación aleatoria para cada solicitud
+- Validación múltiple: Email, nombre y cargo deben coincidir
+- Confirmación de contraseña: Doble verificación
+
+### 🎯 Casos de Uso
+### Escenario Exitoso ✅
+
+- Usuario ingresa datos válidos
+- Sistema encuentra usuario en BD
+- Se envía código por correo
+- Usuario ingresa código correcto
+- Se establecen contraseñas coincidentes
+- Sistema actualiza contraseña exitosamente
+
+### Escenarios de Error ❌
+
+- Datos inválidos: Email mal formado o usuario inexistente
+- Código incorrecto: Usuario ingresa código erróneo
+- Contraseñas diferentes: No coinciden contraseña y confirmación
+- Error de BD: Falla al actualizar contraseña
