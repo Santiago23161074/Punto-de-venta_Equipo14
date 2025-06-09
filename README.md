@@ -815,3 +815,95 @@ El sistema de Recuperación de Contraseña es una aplicación Java Swing que per
 - Código incorrecto: Usuario ingresa código erróneo
 - Contraseñas diferentes: No coinciden contraseña y confirmación
 - Error de BD: Falla al actualizar contraseña
+
+---
+
+# 📋 Sistema de Registro de Personal
+## 🎯 Descripción
+Sistema de registro de personal desarrollado en Java Swing que permite el registro seguro de nuevos empleados con validación de correo electrónico, generación automática de contraseñas y verificación por código.
+
+## 🛠️ Funcionalidades Principales
+
+- ✅ Registro de personal con datos completos
+- 📧 Verificación por correo electrónico
+- 🔐 Generación automática de contraseñas seguras
+- 🔍 Validación de campos en tiempo real
+- 👁️ Visualización temporal de contraseñas
+- 📄 Generación de PDF de verificación
+
+## 📊 Tabla de Métodos Principales
+
+  | Método | Descripción | Parámetros |
+|---------|------|-------------|
+| `LlenarPersonal()`|📝 Carga los cargos disponibles en el ComboBox|Ninguno|
+| `ValidacionesEntradas()`| ✏️ Configura validaciones para campos de texto|Ninguno|
+| `btnRegistrarUsuarioActionPerformed()`| 💾 Procesa el registro del nuevo personal|ActionEvent|
+| `btnSugerirContraseñaActionPerformed()`| 🔑 Genera una contraseña segura automáticamente|ActionEvent|
+| `txtCorreoRegistroActionPerformed()`| 📬 Envía código de verificación al correo |ActionEvent|
+| `iconContraseñaMousePressed/Released()`|👀 Controla la visibilidad de contraseñas|MouseEvent|
+| `btnSalirActionPerformed()`|🚪 Maneja el cierre seguro de la ventana |MouseEvent|
+
+## ⚙️ Funcionamiento del Sistema
+### 🔄 Flujo de Registro
+
+- 📝 Captura de Datos: El usuario ingresa nombre, apellidos, contraseña y selecciona un cargo
+- 🔍 Validación: El sistema valida que solo se ingresen letras en campos de nombre
+- 📧 Verificación de Correo: Al ingresar el correo, se genera y envía un código de verificación
+- 🔐 Validación de Contraseña: Se verifica que la contraseña cumpla con los requisitos de seguridad
+- ✅ Confirmación: Se valida que las contraseñas coincidan
+- 💾 Registro: Se almacena el personal en la base de datos tras verificar el código
+
+## 🎨 Componentes de la Interfaz
+
+- 🏷️ Campos de Texto: Nombre, apellidos, correo y código de verificación
+- 🔒 Campos de Contraseña: Contraseña y confirmación con opción de visualización
+- 📋 ComboBox: Selección de cargo del personal
+- 🔘 Botones: Registro, sugerir contraseña, salir
+- ⚠️ Iconos de Error: Indicadores visuales para campos inválidos
+
+## 🔧 Características Técnicas
+
+- 🎨 Framework: Java Swing para interfaz gráfica
+- 🗄️ Base de Datos: Conexión mediante clase Conexion_Personal
+- 📧 Email: Envío de correos con verificación PDF
+- 🔐 Seguridad: Generación de contraseñas con biblioteca generarContrasena
+- ✅ Validación: Validaciones personalizadas mediante clase Validacion
+
+## 🚨 Validaciones Implementadas
+
+- ✏️ Campos de Nombre: Solo acepta letras
+- 📧 Correo Electrónico: Formato válido de email
+- 🔐 Contraseña: Cumplimiento de requisitos de seguridad
+- 🔄 Confirmación: Coincidencia entre contraseñas
+- 🏷️ Cargo: Selección obligatoria de cargo
+- 🔢 Código: Verificación del código enviado por correo
+
+## 🎯 Casos de Uso
+
+- 👤 Administrador registra nuevo empleado
+- 📧 Sistema envía verificación automática
+- 🔐 Generación de contraseña temporal segura
+- ✅ Validación completa antes del registro
+
+## 🔒 Seguridad
+
+- Las contraseñas se ocultan por defecto con caracteres '*'
+- Generación automática de contraseñas que cumplen requisitos de seguridad
+- Verificación por correo electrónico obligatoria
+- Validación de datos antes del registro en base de datos
+
+## 📱 Interfaz de Usuario
+La interfaz cuenta con un diseño intuitivo con:
+
+- 🎨 Colores corporativos (púrpura y azul)
+- ⚠️ Iconos de error que se muestran dinámicamente
+- 👁️ Controles de visibilidad para contraseñas
+- 📋 Formulario organizado y fácil de usar.
+
+---
+# Video
+
+---
+# Autores
+- Méndez García Ángel de Jesús
+- Pérez Jiménez Santiago Enmanuel 
